@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+<body>
+    <h1>chuyen doi nhiet do</h1>
+    <input type="text" id="tempC">
+    <button onclick="converF()">doi sang F</button>
+    <button onclick="converK()">doi sang K</button> <br><br>
+    
+
+
+    <div id="result"> </div>
+
+    <script>
+        class Temperrature {
+            constructor (number) {
+                this.numberC = number;
+                this.numberF = function() {
+                      return (9/5*this.numberC +32);
+                }
+                this.numberK = function() {
+                    return (this.numberC + 273.15);
+                }
+            }
+        }
+
+        function converF() {
+
+           let temp =  parseFloat( document.getElementById('tempC').value);
+           if(temp) {
+               let dt1 = new Temperrature(temp);
+               document.getElementById('result').innerText = `
+               ket qua : ${dt1.numberF()} F
+               `
+           };
+        }
+
+        function converK() {
+
+            let temp =  parseFloat( document.getElementById('tempC').value);
+            if(temp) {
+                let dt1 = new Temperrature(temp);
+                document.getElementById('result').innerText = `
+                ket qua : ${dt1.numberK()} K`
+            };
+        }
+
+    </script>
+</body>
+</html>
