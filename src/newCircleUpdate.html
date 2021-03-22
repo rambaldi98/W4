@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500px" height="500px" style="border:1px solid #d3d3d3"> ds</canvas>
+
+
+    <script>
+        function Circle(x,y,radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+
+        function getRandomHex() {
+            return Math.floor(Math.random()*255);
+        }
+
+        function getRandomColor(){
+            let red = getRandomHex();
+            let green = getRandomHex();
+            let blue = getRandomHex();
+            return `rgb(${red},${green},${blue})`;
+        }
+
+        function creatCircle() {
+            
+            let a = document.getElementById("myCanvas");
+            let ctx = a.getContext('2d');
+            let radius = Math.floor(Math.random()*100);
+
+            let color = getRandomColor();
+
+            let x = Math.random()*window.innerWidth;
+            let y = Math.random()*window.innerHeight;
+
+
+            let circle = new Circle(x,y,radius);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y,circle.radius, 0,  Math.PI*1.5,false);
+            ctx.fillStyle = color; //dat mau ve 0
+            ctx.fill();
+    
+
+        }
+
+        // creatCircle(); tao 1 hinh tron
+        // creatCircle();
+        
+        // tao nhieu hinh tron
+
+        function createMultipleCircle() {
+            for(let i = 0; i < 30; i++) {
+                creatCircle();
+            }
+        }
+
+        createMultipleCircle();
+
+
+    </script>
+</body>
+</html>
