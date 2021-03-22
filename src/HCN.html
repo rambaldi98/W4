@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>nhap chieu dai</p> <br>
+    <input type="text"  placeholder="nhap chieu dai" id="height" ><br>
+    <p>nhap chieu rong</p> <br>
+    <input type="text"  placeholder="nhap chieu rong" id="width" > <br><br>
+
+    <button onclick="getCount()"> tinh</button> 
+
+    <span id="result"></span> <br><br>
+
+
+    <canvas id="canvas" height="500" width="500" style="border: 1px solid #d3d3d3"></canvas>
+    <script>
+
+        class Rectangle {
+            constructor (_height,_width) {
+                this.height = _height;
+                this.width = _width;
+            }
+
+            getArea() {
+                return this.height*this.width;
+            }
+
+            getPerimeter() {
+                return 2*(this.height + this.width);
+            }
+
+            Draw() {
+                let draw_retangle = document.getElementById('canvas').getContext('2d');
+                // draw_retangle.beginPath();
+                draw_retangle.rect(100,100,this.height,this.width);
+                draw_retangle.fillStyle = "#ff0000";
+                draw_retangle.fill();
+            }
+        }
+
+
+        function getCount() {
+            let height1 = parseFloat( document.getElementById('height').value);
+            let width1 = parseFloat( document.getElementById('width').value);
+            let result = document.getElementById('result');
+
+            if(height&&width){
+                let rect = new Rectangle(height1,width1);
+                result.innerText = ` 
+
+                            chu vi la : ${rect.getPerimeter()} 
+                             dien tich la : ${rect.getArea()} `;
+                rect.Draw();
+               
+            }
+               
+
+            
+
+            
+           
+        }
+
+    </script>
+</body>
+</html>
