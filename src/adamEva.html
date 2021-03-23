@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai ham an </title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor (weight) {
+                this.weight = weight;
+            }
+
+            decrease = function () {
+                if(this.weight > 0) 
+                    this.weight --;
+            }
+
+            isEmpty = function () {
+                return this.weight === 0;
+            }
+
+            getWeight () {
+                return this.weight;
+            }
+        }
+
+        class Human {
+            constructor (name, gender,weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+
+            isMale() {
+                if(this.gender == "nam")
+                    return true;
+                else 
+                    return false;
+            }
+
+            setGender(gender) {
+                this.gender = gender;
+            }
+
+            checkApple(apple) {
+                return apple.isEmpty;
+            }
+
+            eatApple(apple) {
+                if(apple.weight > 0) {
+                    apple.decrease();
+                    this.weight++;
+                }
+            };
+
+            say(message) {
+                return console.log(` ${this.name} say:  ${message}`) ;
+            };
+            getName() {
+                return this.name;
+            };
+            setName(name) {
+                this.name = name;
+            };
+
+            getWeight() {
+                return this.weight;
+            };
+            setWeight(weight) {
+                this.weight = weight;
+            }
+
+        }
+
+
+        let apple = new Apple(10);
+        let adam = new Human("adam","nam",60);
+        let eva = new Human("Eva","nu",50);
+
+        function humanEatApple(name) {
+            if(apple.isEmpty())
+                console.log('apple is empty');
+            else {
+                if(name == "adam") {
+                    adam.eatApple(apple);
+                }else 
+                    if(name == "eva") {
+                        eva.eatApple(apple);
+                    }
+                console.log(apple.weight);
+            }
+
+            
+        }
+
+    </script>
+</body>
+</html>
