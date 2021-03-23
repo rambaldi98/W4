@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+
+    <style>
+       
+        
+    </style>
+</head>
+<body>
+    
+    <h1>iphone</h1> 
+    <!-- <lable for = "phone1">status</lable> 
+    <input type="checkbox" id="phone1" checked >  -->
+   
+    <input type="text" id="mess1">&nbsp; <span id="pin1"></span> <br><br>
+    <textarea disabled id="inbox1" cols="30" rows="10"></textarea> <br>
+    <button onclick="sent(iphone,samsung,'mess1','inbox2')" >Sent</button>
+    <button onclick="iphone.turnOn()">TurnOn</button>
+    <button onclick="iphone.turnOff()">TurnOff</button>
+    <button onclick="sacPin1(iphone)">Sac Pin</button> <br><br>
+
+
+    <h1>samsung</h1> 
+    <!-- <lable for = "phone1">status</lable> 
+    <input type="checkbox" id="phone1" checked >  -->
+   
+    <input type="text" id="mess2"> &nbsp; <span id="pin2"></span> <br><br>
+    <textarea disabled id="inbox2" cols="30" rows="10"></textarea> <br>
+    <button onclick="sent(samsung,iphone,'mess2','inbox1')" >Sent</button>
+    <button onclick="samsung.turnOn()">TurnOn</button>
+    <button onclick="samsung.turnOff()">TurnOff</button>
+    <button onclick="sacPin1(samsung)">Sac Pin</button> <br><br>
+
+    <script>
+        let mobile = function (name,status, message, pin) {
+            this.name = name;
+            this.status = status;
+            this.message = message;
+            this.pin = pin;
+            this.inbox = [];
+            this.contune = [];
+
+
+            this.getName = function () {
+                return this.name;
+            }
+
+            this.getStatus = function () {
+                return this.status;
+            }
+
+            this.getMessage = function () {
+                return this.message;
+            }
+
+            this.getPin = function () {
+                return this.pin;
+            }
+
+            this.getInbox = function () {
+                return this.inbox;
+            }
+
+            this.getContune = function () {
+                return this.contune;
+            }
+            //
+            this.setName = function (name) {
+                this.name = name;
+            }
+
+            this.setStatus = function (status) {
+                this.status = status;
+            }
+
+            this.setMessage = function (message) {
+                this.message = message;
+            }
+
+            this.setPin = function (pin) {
+                this.pin = pin;
+            }
+
+            this.setInbox = function (inbox) {
+                this.inbox = inbox;
+            }
+
+            this.setContune = function (contune) {
+                this.contune = contune;
+            }
+            //
+
+            this.turnOn = function () {
+                this.status = true;
+                alert('may bat');
+            }
+
+            this.turnOff = function () {
+                this.status = false;
+                alert('may tat');
+            }
+
+
+            //
+            this.sacPin = function() {
+                if(this.pin < 100){
+                    this.pin += 10;
+                } else {
+                    alert('day pin');
+                }
+            }
+            this.truPin = function() {
+                this.pin -= 10;
+            }
+            //
+
+            this.sent = function (mobileNhan) {
+                if(this.status) {
+                    this.contune.push(this.message);
+                    mobileNhan.inbox.push(this.message);
+                    this.truPin();
+                    
+                } else {
+                    alert('hay bat may');
+                }
+            }
+        }
+
+        let iphone = new mobile("iphone",true,"",100);
+        let samsung = new mobile("samsung",true,"",100);
+        iphone.turnOff();
+        samsung.turnOff();
+        document.getElementById('pin1').innerText = iphone.getPin();
+        document.getElementById('pin2').innerText = samsung.getPin();
+
+        function sent(mobileSent,mobileNhan,idMess,idInbox) {
+            if(mobileSent.getPin() > 0) {
+                let mess = document.getElementById(idMess).value;
+                document.getElementById(idMess).value = '';
+                mobileSent.setMessage(mess);
+                mobileSent.sent(mobileNhan);
+                
+                display(idInbox,mobileNhan);
+                // display(idInbox,mobileSent);
+                // mobileSent.truPin();
+                document.getElementById('pin1').innerText = iphone.getPin();
+                document.getElementById('pin2').innerText = samsung.getPin();
+                
+            } else {
+                mobileSent.turnOff();
+                alert('het pin');
+            }
+        }
+
+        function display(idInbox,mobileNhan){
+            
+            document.getElementById(idInbox).value = '';
+
+            let inbox = mobileNhan.getInbox();
+
+            for(let i = 0; i < inbox.length ; i++) {
+                document.getElementById(idInbox).value += inbox[i] + "\n";
+            }
+        }
+
+        function sacPin1(mobile1) {
+            mobile1.sacPin();
+            document.getElementById('pin2').innerText = samsung.getPin();
+            document.getElementById('pin1').innerText = iphone.getPin();
+            
+        }
+
+        
+
+    </script>
+</body>
+</html>
