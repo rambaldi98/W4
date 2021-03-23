@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        var c = document.getElementById("canvas");// (Lấy tham chiếu của phần tử canvas và gán nó vào biến c)
+        var ctx = c.getContext("2d"); //(chọn kiểu vẽ là 2d)
+        ctx.beginPath();
+        
+        ctx.moveTo(293,265);
+        ctx.lineTo(320,255);
+        ctx.lineTo(305,240);
+        ctx.lineTo(360,215);
+        ctx.lineTo(320,170);
+        ctx.lineTo(390,150);
+        ctx.lineTo(420,80);
+        ctx.quadraticCurveTo(380,75,220,160);
+        ctx.lineTo(300,210);
+        ctx.lineTo(272,230);
+        ctx.quadraticCurveTo(270,240,293,265);
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.fillStyle = '#fcd822';
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.moveTo(130,210);
+        ctx.quadraticCurveTo(135,230,120,250);
+        ctx.quadraticCurveTo(90,280,100,310);
+        ctx.bezierCurveTo(65,280,50,290,60,310);
+        ctx.bezierCurveTo(90,350,120,380,130,350);
+        ctx.bezierCurveTo(150,340,250,340,270,350);
+        ctx.bezierCurveTo(280,380,310,350,340,310);
+        ctx.bezierCurveTo(350,290,340,280,300,310);
+        ctx.quadraticCurveTo(310,280,280,250);
+        ctx.quadraticCurveTo(265,230,270,210);
+        ctx.lineWidth = 3;
+        ctx.fillStyle = '#fcd822';
+        ctx.stroke();
+        ctx.fill();
+
+        //
+
+        ctx.beginPath();
+        ctx.moveTo(240,230);
+        ctx.quadraticCurveTo(305,200,275,160);
+        ctx.quadraticCurveTo(280,135,270,120);
+        ctx.quadraticCurveTo(320,90,325,25);
+        ctx.quadraticCurveTo(280,40,250,100);
+        ctx.bezierCurveTo(230,80,170,80,150,100);
+        ctx.quadraticCurveTo(120,40,75,25);
+        ctx.quadraticCurveTo(80,90,130,120);
+        ctx.quadraticCurveTo(120,135,125,160);
+        ctx.quadraticCurveTo(95,200,160,230);
+        ctx.stroke();
+        ctx.fill();
+
+        //
+
+        ctx.beginPath();
+        ctx.moveTo(130,280);
+        ctx.quadraticCurveTo(130,310,160,345);
+        ctx.lineTo(157,350);
+        ctx.lineTo(165,347);
+        ctx.lineTo(163,352);
+        ctx.lineTo(170,347);
+        ctx.lineTo(175,355);
+        ctx.lineTo(180,347);
+        ctx.lineTo(185,352);
+        ctx.lineTo(185,343);
+        ctx.quadraticCurveTo(190,310,180,255);
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(270,280);
+        ctx.quadraticCurveTo(270,310,240,345);
+        ctx.lineTo(243,350);
+        ctx.lineTo(235,347);
+        ctx.lineTo(237,352);
+        ctx.lineTo(230,347);
+        ctx.lineTo(225,355);
+        ctx.lineTo(220,347);
+        ctx.lineTo(215,352);
+        ctx.lineTo(215,343);
+        ctx.quadraticCurveTo(210,310,220,255);
+        ctx.stroke();
+        ctx.fill();
+
+        //
+
+        ctx.beginPath();
+        ctx.moveTo(70,290);
+        ctx.lineTo(90,310);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(58,295);
+        ctx.lineTo(75,312);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(100,309);
+        ctx.lineTo(110,317);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(130,350);
+        ctx.quadraticCurveTo(132,345,130,335);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(340,290);
+        ctx.lineTo(310,310);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(345,296);
+        ctx.lineTo(320,320);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(300,309);
+        ctx.lineTo(290,317);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(270,350);
+        ctx.quadraticCurveTo(268,345,270,335);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // 2 tai
+
+        ctx.beginPath();
+        ctx.moveTo(102,40);
+        ctx.lineTo(90,80);
+        ctx.quadraticCurveTo(73,40,75,25);
+        ctx.quadraticCurveTo(106,40,102,40);
+        ctx.fillStyle = '#000';
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(298,40);
+        ctx.lineTo(310,80);
+        ctx.quadraticCurveTo(327,40,325,25);
+        ctx.quadraticCurveTo(294,40,298,40);
+        ctx.fillStyle = '#000';
+        ctx.stroke();
+        ctx.fill();
+        //
+
+        /* left eye */
+        ctx.beginPath();
+        ctx.arc(160, 140, 14,  0, Math.PI*2);
+        ctx.fillStyle = '#000';
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(165,133, 6, 0, Math.PI*2);
+        ctx.fillStyle = '#fff';
+        ctx.stroke();
+        ctx.fill();
+
+        /* right eye */
+        ctx.beginPath();
+        ctx.arc(240, 140, 14, 0, Math.PI*2);
+        ctx.fillStyle = '#000';
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(235,133, 6, 0, Math.PI*2);
+        ctx.fillStyle = '#fff';
+        ctx.stroke();
+        ctx.fill();
+
+        /* nose */
+        ctx.beginPath();
+        ctx.moveTo(195,160);
+        ctx.lineTo(205,160);
+        ctx.lineTo(200,165);
+        ctx.lineTo(195,160);
+        ctx.fillStyle = '#000';
+        ctx.stroke();
+        ctx.fill();
+
+        /* mouth */
+        ctx.beginPath();
+        ctx.moveTo(180,175);
+        ctx.quadraticCurveTo(190,185,200,175);
+        ctx.quadraticCurveTo(210,185,220,175);
+        ctx.lineWidth =1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(125,160);
+        ctx.bezierCurveTo(150,160,150,200,120,200);
+        ctx.quadraticCurveTo(110,180,125,160);
+        ctx.fillStyle = '#FF0000'
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(275,160);
+        ctx.bezierCurveTo(250,160,250,200,280,200);
+        ctx.quadraticCurveTo(290,180,275,160);
+        ctx.fillStyle = '#FF0000'
+        ctx.stroke();
+        ctx.fill();
+    </script>
+</body>
+</html>
