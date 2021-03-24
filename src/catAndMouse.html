@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meo bat chuot</title>
+</head>
+<body>
+    <script>
+        class Rat {
+            constructor (name,weight,speed){
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.status = true;
+                
+            };
+            speak(str) {
+                return this.name + " " + str;
+            };
+        }
+
+        class Cat {
+            constructor (name, weight,speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+
+            }
+
+        speak(str) {
+            return this.name +" "+ str;
+        }
+
+        catch(mouse) {
+            if(this.speed > mouse.speed){
+                console.log("da bat duoc chuot");
+            }
+        }
+        eat(mouse) {
+            if(mouse.status) {
+                mouse.status = false;
+                this.weight += mouse.weight;
+                console.log('chuot da thit');
+            }
+        }
+        }
+    </script>
+</body>
+</html>
