@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+</head>
+<body>
+    
+    <button onclick="buttonNew.switchOn()" value="true">ON</button>
+    <button onclick="buttonNew.switchOff()" value="false">OFF</button>
+
+    <script>
+
+        class ElectricLamp {
+            constructor(status) {
+                this.status = status;
+            }
+
+            turnOff(){
+                this.status = false;
+            }
+            turnOn() {
+                this.status = true;
+            }
+        }
+
+        class SwitchButton {
+            constructor(status) {
+                this.status = status;
+                this.lamp = new ElectricLamp();
+            }
+
+            connectToLamp = function() {
+                this.lamp.status = this.status
+            }
+            
+            switchOff() {
+                this.status = false;
+                this.connectToLamp();
+                alert('den tat');
+            }
+
+            switchOn() {
+                this.status = true;
+                this.connectToLamp();
+                alert('den bat');
+            };
+            
+
+        }
+
+        let buttonNew = new SwitchButton(false);
+        
+
+    </script>
+</body>
+</html>
